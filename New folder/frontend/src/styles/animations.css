@@ -1,0 +1,207 @@
+/* Material Design 3 Animations */
+
+/* MD3 Standard Easing */
+:root {
+  --md3-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md3-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md3-easing-decelerate: cubic-bezier(0, 0, 0, 1);
+  --md3-easing-accelerate: cubic-bezier(0.3, 0, 1, 1);
+}
+
+/* Keyframes */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* MD3 Standard Enter */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* MD3 Emphasized Launch */
+@keyframes emphasizedIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(103, 80, 164, 0.25); }
+  50% { box-shadow: 0 0 40px rgba(103, 80, 164, 0.5); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* MD3 Fade In */
+@keyframes md3FadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* MD3 Slide Up In */
+@keyframes md3SlideUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Classes */
+.animate-spin { animation: spin 1s linear infinite; }
+.animate-pulse { animation: pulse 2s ease-in-out infinite; }
+.animate-bounce { animation: bounce 1s ease infinite; }
+.animate-slide-in-right { animation: slideInRight 0.25s var(--md3-easing-standard); }
+.animate-slide-in-up { animation: slideInUp 0.25s var(--md3-easing-standard); }
+.animate-fade-in { animation: fadeIn 0.2s var(--md3-easing-standard); }
+.animate-scale-in { animation: scaleIn 0.25s var(--md3-easing-standard); }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-glow { animation: glow 2s ease-in-out infinite; }
+
+/* MD3 Specific */
+.animate-emphasized-in {
+  animation: emphasizedIn 0.4s var(--md3-easing-emphasized);
+}
+
+.animate-fade-in-md3 {
+  animation: md3FadeIn 0.25s var(--md3-easing-standard);
+}
+
+.animate-slide-up-md3 {
+  animation: md3SlideUpIn 0.3s var(--md3-easing-emphasized);
+}
+
+/* Skeleton Loading - MD3 */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--md-sys-color-surface-container-high) 25%,
+    var(--md-sys-color-surface-container) 50%,
+    var(--md-sys-color-surface-container-high) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-medium);
+}
+
+/* Hover Transitions - MD3 */
+.hover-lift {
+  transition: transform var(--md-motion-duration-short) var(--md-motion-easing-standard), 
+              box-shadow var(--md-motion-duration-short) var(--md-motion-easing-standard);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--md-shadow-level3);
+}
+
+.hover-scale {
+  transition: transform var(--md-motion-duration-short) var(--md-motion-easing-standard);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow {
+  transition: box-shadow var(--md-motion-duration-medium) var(--md-motion-easing-standard);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Page Transitions - MD3 */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 250ms var(--md3-easing-standard), transform 250ms var(--md3-easing-standard);
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 200ms var(--md3-easing-decelerate);
+}
+
+/* Stagger Children Animation for Grid */
+.stagger-children > * {
+  animation: md3SlideUpIn 0.3s var(--md3-easing-emphasized) backwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 100ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 150ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 200ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 250ms; }
+.stagger-children > *:nth-child(7) { animation-delay: 300ms; }
+.stagger-children > *:nth-child(8) { animation-delay: 350ms; }

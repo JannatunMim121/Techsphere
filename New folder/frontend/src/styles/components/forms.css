@@ -1,0 +1,272 @@
+/* Material Design 3 Forms - Google Forms Style */
+
+/* Form Container */
+.form-container {
+  background: var(--md-sys-color-surface-container-low);
+  border: none;
+  border-radius: var(--radius-extra-large);
+  padding: var(--space-8);
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: var(--md-shadow-level1);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.form-title {
+  font-family: var(--md-font-family);
+  font-size: var(--md-headline-medium);
+  font-weight: 400;
+  color: var(--md-sys-color-on-surface);
+}
+
+.form-subtitle {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-body-medium);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: var(--space-5);
+}
+
+/* Form Label */
+.form-label {
+  display: block;
+  font-family: var(--md-font-family);
+  font-size: var(--md-label-medium);
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-bottom: var(--space-2);
+}
+
+.form-label.required::after {
+  content: '*';
+  color: var(--md-sys-color-error);
+  margin-left: var(--space-1);
+}
+
+/* Form Input - Google Forms Style */
+.form-input {
+  width: 100%;
+  padding: 16px;
+  background: transparent;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--radius-extra-small);
+  font-family: var(--md-font-family);
+  font-size: var(--md-body-large);
+  color: var(--md-sys-color-on-surface);
+  transition: all var(--md-motion-duration-short) var(--md-motion-easing-standard);
+}
+
+.form-input:focus {
+  outline: none;
+  border: 2px solid var(--md-sys-color-primary);
+  box-shadow: 0 0 0 4px rgba(124, 77, 255, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.form-input.error {
+  border-color: var(--md-sys-color-error);
+}
+
+.form-input:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  background: var(--md-sys-color-surface-container-high);
+}
+
+/* Form Select */
+.form-select {
+  width: 100%;
+  padding: 16px 48px 16px 16px;
+  background: transparent;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--radius-extra-small);
+  font-family: var(--md-font-family);
+  font-size: var(--md-body-large);
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2379747e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  transition: all var(--md-motion-duration-short) var(--md-motion-easing-standard);
+}
+
+.form-select:focus {
+  outline: none;
+  border: 2px solid var(--md-sys-color-primary);
+  box-shadow: 0 0 0 4px rgba(124, 77, 255, 0.1);
+}
+
+/* Form Textarea */
+.form-textarea {
+  width: 100%;
+  padding: 16px;
+  background: transparent;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--radius-extra-small);
+  font-family: var(--md-font-family);
+  font-size: var(--md-body-large);
+  color: var(--md-sys-color-on-surface);
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border: 2px solid var(--md-sys-color-primary);
+  box-shadow: 0 0 0 4px rgba(124, 77, 255, 0.1);
+}
+
+/* Form Checkbox */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--md-sys-color-outline);
+  border-radius: var(--radius-extra-small);
+  cursor: pointer;
+  transition: all var(--md-motion-duration-short) var(--md-motion-easing-standard);
+  flex-shrink: 0;
+}
+
+.form-check-input:checked {
+  background: var(--md-sys-color-primary);
+  border-color: var(--md-sys-color-primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Form Radio */
+.form-check-input[type="radio"] {
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type="radio"]:checked {
+  border-width: 6px;
+  background: transparent;
+}
+
+.form-check-label {
+  font-family: var(--md-font-family);
+  font-size: var(--md-body-medium);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Form Error */
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-family: var(--md-font-family);
+  font-size: var(--md-label-small);
+  color: var(--md-sys-color-error);
+}
+
+/* Form Help Text */
+.form-help {
+  margin-top: var(--space-2);
+  font-family: var(--md-font-family);
+  font-size: var(--md-label-small);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Form Row */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 576px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Color Picker */
+.color-picker-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.color-option {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--md-motion-duration-short) var(--md-motion-easing-standard);
+  box-shadow: var(--md-shadow-level1);
+}
+
+.color-option:hover {
+  box-shadow: var(--md-shadow-level2);
+  transform: scale(1.05);
+}
+
+.color-option.selected {
+  border: 3px solid var(--md-sys-color-on-surface);
+  box-shadow: var(--md-shadow-level2);
+}
+
+/* Form Divider */
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--md-sys-color-outline-variant);
+}
+
+.form-divider span {
+  font-family: var(--md-font-family);
+  font-size: var(--md-label-medium);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Form Footer */
+.form-footer {
+  margin-top: var(--space-6);
+}
+
+.form-footer-text {
+  text-align: center;
+  margin-top: var(--space-4);
+  font-family: var(--md-font-family);
+  font-size: var(--md-body-medium);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.form-footer-text a {
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}

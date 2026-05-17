@@ -1,0 +1,150 @@
+/* Google Forms Style Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: #7c4dff;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #651fff;
+}
+
+.btn-secondary {
+  background: #f1f3f4;
+  color: #202124;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #e8eaed;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #7c4dff;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: #f1f3f4;
+}
+
+.btn-success {
+  background: #1a73e8;
+  color: #ffffff;
+}
+
+.btn-danger {
+  background: #d93025;
+  color: #ffffff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #7c4dff;
+  border: 1px solid #dadce0;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #f1f3f4;
+}
+
+.btn-link {
+  background: transparent;
+  color: #7c4dff;
+  padding: 8px 12px;
+  box-shadow: none;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.btn-icon.btn-sm {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  min-width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #e8def8;
+  color: #21005d;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.16);
+  transition: all 0.2s ease;
+  z-index: 100;
+}
+
+.fab:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
